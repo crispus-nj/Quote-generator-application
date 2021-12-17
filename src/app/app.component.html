@@ -1,9 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 mt-3">
-      <input type="text" class="form-control" [(ngModel)]="title">
-      <p class="text-center text-danger mt-3">{{title}}</p>
-      <button class="btn btn-success">Submit</button>
+    <div class="col-lg-6 mt-3">
+      <form (ngSubmit)="onSubmitForm()" #form="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" class="form-control mt-3" required ngModel>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control mt-3" name="email" required email ngModel>
+        </div>
+        <div class="form-group">
+          <label for="quote">Write a Quote</label>
+          <textarea name="quote" id="" class="form-control mt-3" required [(ngModel)] = "quote" rows="4"></textarea>
+        </div>
+        <p class="text-danger shadow mt-3">{{quote}}</p>
+        <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+      </form>
     </div>
   </div>
 </div>
