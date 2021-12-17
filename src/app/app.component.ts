@@ -1,5 +1,4 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-// import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,12 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class AppComponent {
 
   @ViewChild('form') signupForm: ElementRef
+
   message: string;
-  // name: string;
-  // email: string;
-  @ViewChild('name') name: ElementRef
-  @ViewChild('email') email: ElementRef
+  // name: string
+  // email: HTMLInputElement;
+  @ViewChild('name') name: ElementRef 
+  @ViewChild('email') email: ElementRef 
 
   quotes = [
     {
@@ -37,6 +37,13 @@ export class AppComponent {
     console.log(this.signupForm)
   }
   onSubmitValues() {
+    // console.log(
+    //   this.name.nativeElement,
+    //   // this.email.nativeElement.value,
+    //   // this.name,
+    //   // this.email,
+    //   // this.message
+    // )
     let newUser = {
       name: this.name.nativeElement.value,
       email: this.email.nativeElement.value,
