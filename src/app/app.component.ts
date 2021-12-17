@@ -14,8 +14,8 @@ export class AppComponent {
   // email: string;
   @ViewChild('name') name: ElementRef
   @ViewChild('email') email: ElementRef
-  
-  quotes  = [
+
+  quotes = [
     {
       name: "crispu Njenga",
       email: "njengacs@gmail.com",
@@ -33,10 +33,15 @@ export class AppComponent {
     }
   ]
 
-  onSubmitForm(){
+  onSubmitForm() {
     console.log(this.signupForm)
   }
-  onSubmitValues(){
-    console.log(this.name.nativeElement.value, this.email.nativeElement.value, this.message)
+  onSubmitValues() {
+    let newUser = {
+      name: this.name.nativeElement.value,
+      email: this.email.nativeElement.value,
+      quote: this.message
+    }
+    this.quotes.push(newUser)
   }
 }
