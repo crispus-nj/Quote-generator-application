@@ -1,35 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 mt-3">
-      <form (ngSubmit)="onSubmitForm()" #form="ngForm">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" name="name" class="form-control mt-3" required #name  ngModel>
-          <!-- <span class="text-danger" *ngIf="name.touched && !name.valid">Please enter your name *</span> -->
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control mt-3" name="email" required email ngModel #email>
-          <!-- <span *ngIf="email.invalid && email.touched" class="text-danger">Please input your valid email *</span> -->
-        </div>
-        <div class="form-group">
-          <label for="quote">Write a Quote</label>
-          <textarea name="quote" id="" class="form-control mt-3" required [(ngModel)] = "message" rows="4"></textarea>
-        </div>
-        <p class="text-danger shadow mt-3">{{message}}</p>
-        <button type="submit" (click)="onSubmitValues()" [disabled]="form.invalid" class="btn btn-success" >Submit</button>
-      </form>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <p *ngFor="let quo of quotes"> 
-              <strong>Name:</strong> {{quo.name}}
-              <Strong>Email:</Strong>{{quo.email}}
-              <strong>Quote:</strong> {{quo.quote}}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+   <app-form-component></app-form-component>
+   <app-footer-componet></app-footer-componet>
   </div>
 </div>
