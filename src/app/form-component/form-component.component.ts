@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form-component',
@@ -7,18 +7,18 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class FormComponentComponent implements OnInit {
 
+  message: string;
+  @ViewChild('name') name: ElementRef 
+  @ViewChild('email') email: ElementRef 
+  @ViewChild('form') signupForm: ElementRef
+
+  // emit event
+  @Output() userField =  new EventEmitter<{name: string, email: string, message: string}>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
-  @ViewChild('form') signupForm: ElementRef
-
-  message: string;
-  // name: string
-  // email: HTMLInputElement;
-  @ViewChild('name') name: ElementRef 
-  @ViewChild('email') email: ElementRef 
-
   quotes = [
     {
       name: "crispu Njenga",
@@ -40,17 +40,11 @@ export class FormComponentComponent implements OnInit {
   onSubmitForm() {
     console.log(this.signupForm)
   }
-  onSubmitValues() {
-    // console.log(
-    //   this.name.nativeElement,
-    //   // this.email.nativeElement.value,
-    //   // this.name,
-    //   // this.email,
-    //   // this.message
-    // )
+  onSubmitValues(name: any, emailAddress: any) {
+    console.log(name.value, emailAddress.value)
     let newUser = {
-      name: this.name.nativeElement.value,
-      email: this.email.nativeElement.value,
+      name: name.value,
+      email: emailAddress.value,
       quote: this.message
     }
     this.quotes.push(newUser)

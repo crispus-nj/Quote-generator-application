@@ -2,20 +2,20 @@
     <form (ngSubmit)="onSubmitForm()" #form="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" class="form-control mt-3" required #name ngModel>
-        <!-- <span class="text-danger" *ngIf="name.touched && !name.valid">Please enter your name *</span> -->
+        <input type="text" name="name" class="form-control mt-3" required #name="ngModel" ngModel>
+        <span class="text-danger" *ngIf="name.touched && !name.valid">Please enter your name *</span>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control mt-3" name="email" required email ngModel #email>
-        <!-- <span *ngIf="email.invalid && email.touched" class="text-danger">Please input your valid email *</span> -->
+        <input type="email" class="form-control mt-3" name="email" required email ngModel #email="ngModel">
+        <span *ngIf="email.invalid && email.touched" class="text-danger">Please input your valid email *</span>
       </div>
       <div class="form-group">
         <label for="quote">Write a Quote</label>
         <textarea name="quote" id="" class="form-control mt-3" required [(ngModel)]="message" rows="4"></textarea>
       </div>
       <p class="text-danger shadow mt-3">{{message}}</p>
-      <button type="submit" (click)="onSubmitValues()" [disabled]="form.invalid"
+      <button type="submit" (click)="onSubmitValues(name, email)" [disabled]="form.invalid"
         class="btn btn-success">Submit</button>
     </form>
     <div class="container">
