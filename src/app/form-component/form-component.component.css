@@ -2,15 +2,20 @@ input.ng-invalid.ng-touched {
   border: 2px solid red;
 }
 
-textarea.ng-invalid.ng-touched {
+textarea.ng-invalid.ng-touched,
+.select.ng-invalid.ng-touched  {
   border: 2px solid red;
 }
+/* .select.ng-invalid.ng-touched {
+  border: 2px solid red;
+} */
 #form {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  /* width: px; */
   margin-right: auto;
   margin-left: auto;
+}
+#container {
+  display: flex;
+}
+li {
+  list-style-type: none;
 }

@@ -8,7 +8,7 @@ import { FormService } from '../form.service';
 })
 export class FormComponentComponent implements OnInit {
 
-  quotes: {name: string, email: string, quote: string}[]=[]
+  quotes: {name: string, email: string, quote: string, status: string}[]=[]
 
   message: string;
   @ViewChild('name') name: ElementRef 
@@ -16,40 +16,25 @@ export class FormComponentComponent implements OnInit {
   @ViewChild('form') signupForm: ElementRef
 
   // emit event
-  @Output() userField =  new EventEmitter<{name: string, email: string, message: string}>();
+  // @Output() userField =  new EventEmitter<{name: string, email: string, message: string}>();
 
   constructor(private frmService: FormService) { }
 
   ngOnInit(): void {
     this.quotes = this.frmService.quotes
+    // console.log(this.quotes)
+    // console.log(this.frmService.onLoadStatus())
   }
-  // quotes = [
-  //   {
-  //     name: "crispu Njenga",
-  //     email: "njengacs@gmail.com",
-  //     quote: "No pain no gain"
-  //   },
-  //   {
-  //     name: "Levis Oleguna",
-  //     email: "oleguna@gmail.com",
-  //     quote: "Hardwork Pays"
-  //   },
-  //   {
-  //     name: "Kioko masaai",
-  //     email: "masaai@gmail.com",
-  //     quote: "focus on future"
-  //   }
-  // ]
-
   onSubmitForm() {
     console.log(this.signupForm)
   }
-  onSubmitValues(name: any, emailAddress: any) {
+  onSubmitValues(name: any, emailAddress: any, status: any) {
     // console.log(name.value, emailAddress.value)
     let newUser = {
       name: name.value,
       email: emailAddress.value,
-      quote: this.message
+      quote: this.message,
+      status: status.value
     }
     this.quotes.push(newUser)
   }

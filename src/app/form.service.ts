@@ -27,4 +27,7 @@ export class FormService{
             status: status
         })
       }
+      onLoadStatus(){
+        console.log(this.quotes)
+      }
 }
