@@ -18,12 +18,15 @@ button:disabled {
   /* margin-top: 1.5rem; */
 }
 #container {
-  display: flex;
+  margin-right: auto;
+  margin-left: auto;
 }
 li {
   list-style-type: none;
 }
 ::placeholder {
   color: indianred;
-  letter-spacing: normal;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  font-weight: bold;
 }

@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
       <label for="quote">Write a Quote</label>
-      <textarea name="quote" id="" class="form-control mt-3" required [(ngModel)]="message" rows="4"></textarea>
+      <textarea name="quote" id="" class="form-control mt-3" required [(ngModel)]="message" rows="3"></textarea>
     </div>
     <p class="text-danger shadow mt-3">{{ message }}</p>
     <label for="status">Quote Status</label>
@@ -29,24 +29,33 @@
   </form>
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <p *ngFor="let quo of quotes| quoteFilterStatus: quoteStatus : 'status' " [ngClass]="getStatusQoute(quo)"  class="list-group-item">
-         <li  class="list-group-item mt-2">
-           <strong>Name:</strong> {{ quo.name }}
-           <br>
+      <div class="col-md-8">
+        <label for="status" class="text-danger mt-2">Select the list of Quote status you want to view *</label>
+        <select name="status" id="status" class="form-control"  [(ngModel)]="quoteStatus" required>
+          <option value="upvote">Upvote</option>
+          <option value="downvote">Downvote</option>
+        </select>
+        <!-- <input type="text" name="sort" id="" class="form-control mt-3" placeholder="search quote by status"
+          [(ngModel)]="quoteStatus" /> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <ul *ngFor="let quo of quotes| quoteFilterStatus: quoteStatus : 'status' " [ngClass]="getStatusQoute(quo)"
+          class="list-group-item mt-3">
+          <li class="mt-2">
+            <strong>Name:</strong> {{ quo.name }}
+            <br>
             <Strong>Email:</Strong> {{ quo.email }}
             <br>
             <strong>Quote:</strong> {{ quo.quote }}
             <br>
             <strong>status:</strong> {{ quo.status }}
           </li>
-          <!-- <li><Strong>Email:</Strong> {{ quo.email }}</li>
-          <li><strong>Quote:</strong> {{ quo.quote }}</li>
-          <li><strong>status:</strong> {{ quo.status }}</li> -->
-        </p>
+        </ul>
       </div>
       <div class="col-md-6 mt-2">
-        <input type="text" name="sort" id="" class="form-control" placeholder="search quote by status" [(ngModel)]="quoteStatus" />
+        
       </div>
     </div>
   </div>
