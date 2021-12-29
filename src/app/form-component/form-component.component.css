@@ -3,12 +3,15 @@ input.ng-invalid.ng-touched {
 }
 
 textarea.ng-invalid.ng-touched,
-.select.ng-invalid.ng-touched  {
+.select.ng-invalid.ng-touched {
   border: 2px solid red;
 }
 /* .select.ng-invalid.ng-touched {
   border: 2px solid red;
 } */
+button:disabled {
+  cursor: progress;
+}
 #form {
   margin-right: auto;
   margin-left: auto;

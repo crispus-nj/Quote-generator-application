@@ -11,8 +11,8 @@ export class FormComponentComponent implements OnInit {
   quotes: {name: string, email: string, quote: string, status: string}[]=[]
 
   message: string;
-  @ViewChild('name') name: ElementRef 
-  @ViewChild('email') email: ElementRef 
+  // @ViewChild('name') name: ElementRef 
+  // @ViewChild('email') email: ElementRef 
   @ViewChild('form') signupForm: ElementRef
 
   // emit event
@@ -38,5 +38,11 @@ export class FormComponentComponent implements OnInit {
     }
     this.quotes.push(newUser)
   }
-
+  getStatusQoute(quoteStatus: {status: string}){
+    return {
+      'list-group-item-success': quoteStatus.status === 'upvote',
+      'list-group-item-danger' : quoteStatus.status === 'downvote'
+    }
+  }
+ 
 }
