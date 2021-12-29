@@ -29,16 +29,24 @@
   </form>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 mt-3">
-        <p *ngFor="let quo of quotes" [ngClass]="getStatusQoute(quo)" class="list-group-item">
-          <li><strong>Name:</strong> {{ quo.name }}</li>
-          <li><Strong>Email:</Strong> {{ quo.email }}</li>
+      <div class="col-md-6">
+        <p *ngFor="let quo of quotes| quoteFilterStatus: quoteStatus : 'status' " [ngClass]="getStatusQoute(quo)"  class="list-group-item">
+         <li  class="list-group-item mt-2">
+           <strong>Name:</strong> {{ quo.name }}
+           <br>
+            <Strong>Email:</Strong> {{ quo.email }}
+            <br>
+            <strong>Quote:</strong> {{ quo.quote }}
+            <br>
+            <strong>status:</strong> {{ quo.status }}
+          </li>
+          <!-- <li><Strong>Email:</Strong> {{ quo.email }}</li>
           <li><strong>Quote:</strong> {{ quo.quote }}</li>
-          <li><strong>status:</strong> {{ quo.status }}</li>
+          <li><strong>status:</strong> {{ quo.status }}</li> -->
         </p>
       </div>
-      <div class="col-md-6 mt-3">
-        <input type="text" name="sort" id="" class="form-control" placeholder="search quote by status" />
+      <div class="col-md-6 mt-2">
+        <input type="text" name="sort" id="" class="form-control" placeholder="search quote by status" [(ngModel)]="quoteStatus" />
       </div>
     </div>
   </div>

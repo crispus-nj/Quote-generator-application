@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { FooterComponetComponent } from './footer-componet/footer-componet.component';
 import { FormComponentComponent } from './form-component/form-component.component';
 import { FormService } from './form.service';
+import { QuoteFilterStatusPipe } from './quote-filter-status.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponetComponent,
-    FormComponentComponent
+    FormComponentComponent,
+    QuoteFilterStatusPipe
   ],
   imports: [
     BrowserModule,

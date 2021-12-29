@@ -12,7 +12,7 @@ export class FormComponentComponent implements OnInit {
 
   message: string;
   @ViewChild('form') signupForm: ElementRef
-
+  quoteStatus = ''
   constructor(private frmService: FormService) { }
 
   ngOnInit(): void {
