@@ -20,19 +20,20 @@
       <option value="upvote">Upvote</option>
       <option value="downvote">Downvote</option>
     </select>
-    <span *ngIf="status.invalid && status.touched" class="text-danger">Please select the status of the quote *</span><br>
+    <span *ngIf="status.invalid && status.touched" class="text-danger">Please select the status of the quote
+      *</span><br>
     <button type="submit" (click)="onSubmitValues(name, email, status)" [disabled]="form.invalid"
       class="btn btn-success">Submit</button>
   </form>
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6 mt-3">
         <p *ngFor="let quo of quotes">
           <li>
             <strong>Name:</strong> {{quo.name}}
           </li>
           <li>
-            <Strong>Email:</Strong>{{quo.email}}
+            <Strong>Email:</Strong> {{quo.email}}
           </li>
           <li>
             <strong>Quote:</strong> {{quo.quote}}
@@ -41,6 +42,9 @@
             <strong>status:</strong> {{quo.status}}
           </li>
         </p>
+      </div>
+      <div class="col-md-6 mt-3">
+        <input type="text" name="sort" id="" class="form-control" placeholder="search quote by status">
       </div>
     </div>
   </div>

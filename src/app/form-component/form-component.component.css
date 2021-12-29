@@ -12,10 +12,15 @@ textarea.ng-invalid.ng-touched,
 #form {
   margin-right: auto;
   margin-left: auto;
+  /* margin-top: 1.5rem; */
 }
 #container {
   display: flex;
 }
 li {
   list-style-type: none;
+}
+::placeholder {
+  color: indianred;
+  letter-spacing: normal;
 }
