@@ -41,9 +41,11 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <ul *ngFor="let quo of quotes| quoteFilterStatus: quoteStatus : 'status' " [ngClass]="getStatusQoute(quo)"
-          class="list-group-item mt-3">
-          <li class="mt-2">
+        <ul *ngFor="let quo of quotes| quoteFilterStatus: quoteStatus : 'status' " 
+          [ngClass]="getStatusQoute(quo)"
+          class="list-group-item mt-3"
+          (click)="onDeleteQuote(quo)">
+          <li class="mt-2" >
             <strong>Name:</strong> {{ quo.name }}
             <br>
             <Strong>Email:</Strong> {{ quo.email }}

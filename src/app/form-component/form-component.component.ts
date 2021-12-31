@@ -8,7 +8,7 @@ import { FormService } from '../form.service';
 })
 export class FormComponentComponent implements OnInit {
 
-  quotes: {name: string, email: string, quote: string, status: string}[]=[]
+  quotes: { name: string, email: string, quote: string, status: string }[] = []
 
   message: string;
   @ViewChild('form') signupForm: ElementRef
@@ -31,11 +31,15 @@ export class FormComponentComponent implements OnInit {
     }
     this.quotes.push(newUser)
   }
-  getStatusQoute(quoteStatus: {status: string}){
+  getStatusQoute(quoteStatus: { status: string }) {
     return {
       'list-group-item-success': quoteStatus.status === 'upvote',
-      'list-group-item-danger' : quoteStatus.status === 'downvote'
+      'list-group-item-danger': quoteStatus.status === 'downvote'
     }
   }
- 
+  onDeleteQuote(quoteDelete: []) {
+    console.log(quoteDelete)
+    this.quotes.splice(0, 1)
+  }
+
 }
