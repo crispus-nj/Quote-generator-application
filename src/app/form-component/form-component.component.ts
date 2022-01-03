@@ -22,7 +22,7 @@ export class FormComponentComponent implements OnInit {
     // console.log(this.signupForm)
   }
   onSubmitValues(name: any, emailAddress: any, status: any) {
-    console.log(name.value, emailAddress.value, status.value)
+    // console.log(name.value, emailAddress.value, status.value)
     let newUser = {
       name: name.value,
       email: emailAddress.value,
@@ -37,8 +37,8 @@ export class FormComponentComponent implements OnInit {
       'list-group-item-danger': quoteStatus.status === 'downvote'
     }
   }
-  onDeleteQuote(quoteDelete: []) {
-    console.log(quoteDelete)
+  onDeleteQuote(quoteDelete: { name: string, email: string, quote: string, status: string }[] ) {
+    // console.log(typeof quoteDelete)
     this.quotes.splice(0, 1)
   }
 
