@@ -1,0 +1,23 @@
+#quoteRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    padding-bottom: 5rem;
+}
+#quoteImage{
+    display: flex;
+    justify-content: center;
+}
+img {
+    height: 300px;
+    align-content: center;
+    border-radius: 20px;
+}
+h2 {
+    font-size: 3rem;
+}
+button {
+    border-radius: 25px;
+}
