@@ -9,8 +9,8 @@ textarea.ng-invalid.ng-touched,
 /* .select.ng-invalid.ng-touched {
   border: 2px solid red;
 } */
-button:disabled {
-  cursor: progress;
+.btn-success:hover  {
+  cursor: not-allowed;
 }
 #form {
   margin-right: auto;
@@ -23,6 +23,9 @@ button:disabled {
 }
 li {
   list-style-type: none;
+}
+button:hover {
+  cursor: not-allowed;
 }
 ::placeholder {
   color: indianred;

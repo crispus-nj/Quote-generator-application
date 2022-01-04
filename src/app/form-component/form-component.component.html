@@ -78,6 +78,7 @@
           [(ngModel)]="quoteStatus"
           required
         >
+          <option value="">Display All!</option>
           <option value="upvote">Upvote</option>
           <option value="downvote">Downvote</option>
         </select>
@@ -101,6 +102,7 @@
             <strong>Quote:</strong> {{ quo.quote }}
             <br />
             <strong>status:</strong> {{ quo.status }}
+            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
           </li>
         </ul>
       </div>
