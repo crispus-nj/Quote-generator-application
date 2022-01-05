@@ -53,8 +53,10 @@
               <i (click)="onAddUpvote(i)" class="text-success">Upvote </i><strong>{{ quo.upvote}}</strong>
               <i (click)="onAddDownvote(i)" class="text-danger">Downvote</i><strong> {{quo.downvote}}</strong>
             </div>
-            <br />
-            <button class="btn btn-danger mt-2" (click)="onDeleteQuote(i)">Delete Quote</button>
+            <div class="buttons mt-3">
+              <p class="text-primary text-bold">{{quo.currentDate | date}}</p>
+              <button class="btn btn-danger mt-2" (click)="onDeleteQuote(i)">Delete Quote</button>
+            </div>
           </div>
         </div>
       </div>

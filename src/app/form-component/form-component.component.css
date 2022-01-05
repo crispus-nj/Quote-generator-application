@@ -36,11 +36,15 @@ li {
 }
 button {
   border-radius: 20px;
-  /* display: flex;
-  justify-content: flex-end;
-  align-items: flex-end; */
 }
-
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-bold {
+  font-weight: bold;
+}
 ::placeholder {
   color: indianred;
   letter-spacing: 0.1rem;
