@@ -54,7 +54,7 @@ export class FormComponentComponent implements OnInit {
     this.allQuote.splice(index, 1)
   }
   onAddUpvote(index: number){
-    this.allQuote[index].upvote += 1 , index
+    this.allQuote[index].upvote += 1 
   }
   onAddDownvote(index: number){
     this.allQuote[index].downvote += 1 
