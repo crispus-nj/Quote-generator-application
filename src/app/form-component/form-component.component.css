@@ -6,12 +6,19 @@ textarea.ng-invalid.ng-touched,
 .select.ng-invalid.ng-touched {
   border: 2px solid red;
 }
-/* .select.ng-invalid.ng-touched {
-  border: 2px solid red;
-} */
-/* .btn-success:hover  {
-  cursor: not-allowed;
-} */
+.votes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.userDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 .btn-danger {
   float: right;
 }

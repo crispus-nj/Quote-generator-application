@@ -2,115 +2,62 @@
   <form (ngSubmit)="onSubmitForm()" #form="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
-      <input
-        type="text"
-        name="name"
-        class="form-control mt-3"
-        required
-        #name="ngModel"
-        ngModel
-      />
-      <span class="text-danger" *ngIf="name.touched && !name.valid"
-        >Please enter your name *</span
-      >
+      <input type="text" name="name" class="form-control mt-3" required #name="ngModel" ngModel />
+      <span class="text-danger" *ngIf="name.touched && !name.valid">Please enter your name *</span>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input
-        type="email"
-        class="form-control mt-3"
-        name="email"
-        required
-        email
-        ngModel
-        #email="ngModel"
-      />
-      <span *ngIf="email.invalid && email.touched" class="text-danger"
-        >Please input your valid email *</span
-      >
+      <input type="email" class="form-control mt-3" name="email" required email ngModel #email="ngModel" />
+      <span *ngIf="email.invalid && email.touched" class="text-danger">Please input your valid email *</span>
     </div>
     <div class="form-group">
       <label for="quote">Write a Quote</label>
-      <textarea
-        name="quote"
-        id=""
-        class="form-control mt-3"
-        required
-        [(ngModel)]="message"
-        rows="3"
-      ></textarea>
+      <textarea name="quote" id="" class="form-control mt-3" required [(ngModel)]="message" rows="3"></textarea>
     </div>
     <p class="text-danger shadow mt-3">{{ message }}</p>
     <label for="status">Quote Status</label>
-    <select
-      name="status"
-      id="status"
-      class="form-control mt-3 select"
-      ngModel
-      #status="ngModel"
-      required
-    >
+    <select name="status" id="status" class="form-control mt-3 select" ngModel #status="ngModel" required>
       <option value="upvote">Upvote</option>
       <option value="downvote">Downvote</option>
     </select>
-    <span *ngIf="status.invalid && status.touched" class="text-danger"
-      >Please select the status of the quote *</span
-    ><br />
-    <button
-      type="submit"
-      (click)="onSubmitValues(name, email, status)"
-      [disabled]="form.invalid"
-      class="btn btn-success"
-    >
+    <span *ngIf="status.invalid && status.touched" class="text-danger">Please select the status of the quote
+      *</span><br />
+    <button type="submit" (click)="onSubmitValues(name, email, status)" [disabled]="form.invalid"
+      class="btn btn-success">
       Submit
     </button>
   </form>
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <label for="status" class="text-danger mt-2"
-          >Select the list of Quote status you want to view *</label
-        >
-        <select
-          name="status"
-          id="status"
-          class="form-control"
-          [(ngModel)]="quoteStatus"
-          required
-        >
+        <label for="status" class="text-danger mt-2">Select the list of Quote status you want to view *</label>
+        <select name="status" id="status" class="form-control" [(ngModel)]="quoteStatus" required>
           <option value="">Display All!</option>
           <option value="upvote">Upvote</option>
           <option value="downvote">Downvote</option>
         </select>
-        <!-- <input type="text" name="sort" id="" class="form-control mt-3" placeholder="search quote by status"
-          [(ngModel)]="quoteStatus" /> -->
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
-        <ul
-          *ngFor="let quo of allQuote | quoteFilterStatus: quoteStatus:'status', let i = index"
-          [ngClass]="getStatusQoute(quo)"
-          class="list-group-item mt-3"
-         
-        >
-          <p class="mt-2">
-            <strong class="text-dark name">Name:</strong> {{ quo.name }}
+      <div class="col-lg-6" *ngFor="let quo of allQuote | quoteFilterStatus: quoteStatus:'status', let i = index"
+        [ngClass]="getStatusQoute(quo)">
+        <div class="card text-center shadow mt-2">
+          <div class="card-body">
+            <ul class="card-title list-group" style="float: right"><li class="list-group-item-warning"><strong>Name:</strong> {{quo.name}}</li></ul>
             <br />
-            <Strong>Email:</Strong> {{ quo.email }}
+            <div class="userDetail">
+              <p><Strong>Email: </Strong>{{ quo.email }} </p>
+              <p><strong>Quote:</strong> {{ quo.quote }}</p>
+            </div>
+            <div class="votes">
+              <i (click)="onAddUpvote(i)" class="text-success">Upvote </i><strong>{{ quo.upvote}}</strong>
+              <i (click)="onAddDownvote(i)" class="text-danger">Downvote</i><strong> {{quo.downvote}}</strong>
+            </div>
             <br />
-            <strong>Quote:</strong> {{ quo.quote }}
-            <br />
-            <!-- <strong>status:</strong> {{ quo.status }} -->
-            <!-- <br /> -->
-            <i (click)="onAddUpvote(i)" class="text-success">Upvote </i><strong>{{ quo.upvote}}</strong>  | |  <i (click)="onAddDownvote(i)" class="text-danger">Downvote</i><strong> {{quo.downvote}}</strong>
-            <br />
-            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-            <button class="btn btn-danger mt-2"  (click)="onDeleteQuote(i)">Delete Quote</button>
-          </p>
-        </ul>
+            <button class="btn btn-danger mt-2" (click)="onDeleteQuote(i)">Delete Quote</button>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 mt-2"></div>
     </div>
   </div>
 </div>
