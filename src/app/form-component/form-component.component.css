@@ -9,8 +9,11 @@ textarea.ng-invalid.ng-touched,
 /* .select.ng-invalid.ng-touched {
   border: 2px solid red;
 } */
-.btn-success:hover  {
+/* .btn-success:hover  {
   cursor: not-allowed;
+} */
+.btn-danger {
+  float: right;
 }
 #form {
   margin-right: auto;
@@ -24,12 +27,21 @@ textarea.ng-invalid.ng-touched,
 li {
   list-style-type: none;
 }
-button:hover {
-  cursor: not-allowed;
+button {
+  border-radius: 20px;
+  /* display: flex;
+  justify-content: flex-end;
+  align-items: flex-end; */
 }
+
 ::placeholder {
   color: indianred;
   letter-spacing: 0.1rem;
   font-style: italic;
   font-weight: bold;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }

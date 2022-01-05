@@ -87,23 +87,27 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <ul
-          *ngFor="let quo of quotes | quoteFilterStatus: quoteStatus:'status'"
+          *ngFor="let quo of allQuote | quoteFilterStatus: quoteStatus:'status', let i = index"
           [ngClass]="getStatusQoute(quo)"
           class="list-group-item mt-3"
-          (click)="onDeleteQuote(quo)"
+         
         >
-          <li class="mt-2">
-            <strong>Name:</strong> {{ quo.name }}
+          <p class="mt-2">
+            <strong class="text-dark name">Name:</strong> {{ quo.name }}
             <br />
             <Strong>Email:</Strong> {{ quo.email }}
             <br />
             <strong>Quote:</strong> {{ quo.quote }}
             <br />
-            <strong>status:</strong> {{ quo.status }}
+            <!-- <strong>status:</strong> {{ quo.status }} -->
+            <!-- <br /> -->
+            <i (click)="onAddUpvote(i)" class="text-success">Upvote </i><strong>{{ quo.upvote}}</strong>  | |  <i (click)="onAddDownvote(i)" class="text-danger">Downvote</i><strong> {{quo.downvote}}</strong>
+            <br />
             <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-          </li>
+            <button class="btn btn-danger mt-2"  (click)="onDeleteQuote(i)">Delete Quote</button>
+          </p>
         </ul>
       </div>
       <div class="col-md-6 mt-2"></div>
