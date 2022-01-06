@@ -38,25 +38,27 @@
         </select>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-6" *ngFor="let quo of allQuote | quoteFilterStatus: quoteStatus:'status', let i = index"
-        [ngClass]="getStatusQoute(quo)">
-        <div class="card text-center shadow mt-2">
-          <div class="card-body">
-            <ul class="card-title list-group" style="float: right"><li class="list-group-item-warning"><strong>Name:</strong> {{quo.name}}</li></ul>
-            <br />
-            <div class="userDetail">
-              <p><Strong>Email: </Strong>{{ quo.email }} </p>
-              <p><strong>Quote:</strong> {{ quo.quote }}</p>
-            </div>
-            <div class="votes">
-              <i (click)="onAddUpvote(i)" class="text-success">Upvote </i><strong>{{ quo.upvote}}</strong>
-              <i (click)="onAddDownvote(i)" class="text-danger">Downvote</i><strong> {{quo.downvote}}</strong>
-            </div>
-            <div class="buttons mt-3">
-              <p class="text-primary text-bold">{{quo.currentDate | date}}</p>
-              <button class="btn btn-danger mt-2" (click)="onDeleteQuote(i)">Delete Quote</button>
-            </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5" id="quoteOutput" *ngFor="let quo of allQuote | quoteFilterStatus: quoteStatus:'status', let i = index"
+      [ngClass]="getStatusQoute(quo)">
+      <div class="card text-center shadow mt-2">
+        <div class="card-body">
+          <ul class="card-title list-group" style="float: right"><li class="list-group-item-warning"><strong>Name:</strong> {{quo.name}}</li></ul>
+          <br />
+          <div class="userDetail">
+            <p><Strong>Email: </Strong>{{ quo.email }} </p>
+            <p><strong>Quote:</strong> {{ quo.quote }}</p>
+          </div>
+          <div class="votes">
+            <i (click)="onAddUpvote(i)" class="text-success">Upvote </i><strong class="text-success">{{ quo.upvote}}</strong>
+            <i (click)="onAddDownvote(i)" class="text-danger">Downvote</i><strong class="text-danger"> {{quo.downvote}}</strong>
+          </div>
+          <div class="buttons mt-3">
+            <p class="text-primary text-bold">{{quo.currentDate | date}}</p>
+            <button class="btn btn-danger mt-2" (click)="onDeleteQuote(i)">Delete Quote</button>
           </div>
         </div>
       </div>

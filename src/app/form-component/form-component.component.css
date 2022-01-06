@@ -9,7 +9,7 @@ textarea.ng-invalid.ng-touched,
 .votes {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 .userDetail {
@@ -55,4 +55,8 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+}
+#quoteOutput {
+  margin-left: auto;
+  margin-right: auto;
 }
