@@ -53,7 +53,10 @@ export class FormComponentComponent implements OnInit {
     }
   }
   onDeleteQuote(index: any ) {
-    this.allQuote.splice(index, 1)
+    let confirmOptions = confirm(`Are you sure you want to delete: ${this.allQuote[index].quote}`)
+    if(confirmOptions){
+      this.allQuote.splice(index, 1)
+    }
   }
   onAddUpvote(index: number){
     this.allQuote[index].upvote += 1 
