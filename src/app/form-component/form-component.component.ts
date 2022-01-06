@@ -9,10 +9,10 @@ import { Quote } from '../quote';
 export class FormComponentComponent implements OnInit {
 
   allQuote: Quote[]= [
-    new Quote(1, "crispus Njenga", "njenga@gmail.com", "hardword pays", 0, 0, new Date()),
-    new Quote(1, "levis Ole", "Ole@gmail.com", "No pain No gain", 0, 0, new Date()),
-    new Quote(1, "Samuel Kioko", "Kioko@gmail.com", "Trust the process always", 0, 0, new Date()),
-    new Quote(1, "Martha", "martha@gmail.com", "The future belongs to those who are ready", 0, 0, new Date() )
+    new Quote(1, "crispus Njenga", "njenga@gmail.com", "hardword pays", 0, 0, new Date(2020, 24, 1)),
+    new Quote(1, "levis Ole", "Ole@gmail.com", "No pain No gain", 0, 0, new Date(2020, 24, 2)),
+    new Quote(1, "Samuel Kioko", "Kioko@gmail.com", "Trust the process always", 0, 0, new Date(2020, 24, 4)),
+    new Quote(1, "Martha", "martha@gmail.com", "The future belongs to those who are ready", 0, 0, new Date(2020, 24, 3) )
 
   ]
 
