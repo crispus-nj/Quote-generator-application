@@ -1,7 +1,7 @@
 <div class="col-md-6 mt-3" id="form">
   <form (ngSubmit)="onSubmitForm()" #form="ngForm">
     <div class="form-group">
-      <label for="name">Name</label>
+      <label for="name">Author</label>
       <input type="text" name="name" class="form-control mt-3" required #name="ngModel" ngModel />
       <span class="text-danger" *ngIf="name.touched && !name.valid">Please enter your name *</span>
     </div>
@@ -46,7 +46,7 @@
       [ngClass]="getStatusQoute(quo)">
       <div class="card text-center shadow mt-2">
         <div class="card-body">
-          <ul class="card-title list-group" style="float: right"><li class="list-group-item-warning"><strong>Name:</strong> {{quo.name}}</li></ul>
+          <ul class="card-title list-group" style="float: right"><li class="list-group-item-warning"><strong>Author:</strong> {{quo.name}}</li></ul>
           <br />
           <div class="userDetail">
             <p><Strong>Email: </Strong>{{ quo.email }} </p>

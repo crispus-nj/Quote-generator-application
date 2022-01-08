@@ -53,7 +53,10 @@ export class FormComponentComponent implements OnInit {
     }
   }
   onDeleteQuote(index: any ) {
-    let confirmOptions = confirm(`Are you sure you want to delete Quote: { ${this.allQuote[index].quote} } by: { ${this.allQuote[index].name} }`)
+    let confirmOptions = confirm(`
+    Are you sure you want to delete Quote: 
+    "${this.allQuote[index].quote}", by: ${this.allQuote[index].name}.`)
+
     if(confirmOptions){
       this.allQuote.splice(index, 1)
     }
