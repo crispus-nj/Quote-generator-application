@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { FormService } from '../form.service';
 import { Quote } from '../quote';
+
 @Component({
   selector: 'app-form-component',
   templateUrl: './form-component.component.html',

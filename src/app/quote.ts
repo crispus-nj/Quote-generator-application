@@ -6,5 +6,6 @@ export class Quote {
         public quote: string,
         public upvote: number,
         public downvote: number,
-        public currentDate: Date) { }
+        public currentDate: Date
+        ) { }
 }
